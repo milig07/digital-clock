@@ -1,0 +1,132 @@
+/* General Resets */
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+/* Body Styling */
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-image: url('dg2.jpg');
+    background-position: center;
+    background-size: cover; /* Ensure background covers entire view */
+}
+
+/* Button Styling */
+button {
+    display: grid;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(51, 51, 60);
+    border-radius: 20px;
+    color: black; /* Changed for better contrast */
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ddd; /* Slight hover effect */
+}
+
+button:after {
+    content: '';
+    place-self: center;
+    width: 0px;
+    height: 0px;
+    background-color: rgb(114, 102, 40);
+    z-index: -1;
+    border-radius: 50%;
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+button:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* Button Animations (from right) */
+.animateFromRight::after {
+    right: -200px;
+    width: 200px;
+    height: 200px;
+}
+
+.animateFromRight:active::after {
+    right: 0px;
+}
+
+/* Button Animations (from left) */
+.animateFromLeft::after {
+    left: -200px;
+    width: 200px;
+    height: 200px;
+}
+
+.animateFromLeft:active::after {
+    left: 0px;
+}
+
+/* Time Container Styling */
+.Time-container {
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    overflow: hidden;
+    background-color: #e1e3ea;
+    border-radius: 5px;
+    color: rgb(23, 20, 20);
+    margin-bottom: 20px; /* Add spacing between time containers */
+}
+
+/* Indian Time Styling */
+.indian-time {
+    font-size: 30px; /* Set specific font size for Indian Time */
+}
+
+/* American Time Styling */
+.american-time {
+    font-size: 25px; /* Set specific font size for American Time */
+}
+
+/* List items for each digit */
+.Time-container li {
+    list-style-type: none;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0px 10px;
+    background: transparent; /* Ensure background is transparent */
+    transition-duration: 0.3s;
+}
+
+/* Colon Styling */
+.Time-container .colon {
+    font-size: 30px;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    background: transparent; /* Ensure colon background is transparent */
+}
+
+/* Digit Styling */
+.digit li {
+    position: relative;
+    background: transparent; /* Ensure digit background is transparent */
+}
+
+/* Additional Global Styles */
+.Time-container li,
+button {
+    transition: 0.3s ease; /* Smooth transitions for all elements */
+}
